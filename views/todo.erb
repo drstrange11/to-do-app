@@ -1,0 +1,26 @@
+<header>
+  <div id='header-left'>
+    <h1><%= @todo %></h1>
+    <h3> Update To-do </h3>
+  </div>
+</header>
+<section class='todo-container'>
+  <div>
+    <form action = "/todos/<%=@id%>" method="POST" class="form">
+        <input type="hidden" name="_method" value="patch">
+        <input type="text" name="title" value="<%= @todo %>">
+        <input type="text" name="days" value= "<%= @days %>">
+        <div class="btn-container">
+          <a class="btn" href='/'> Back </a>
+          <input class='btn-submit' type='submit' value='Save Changes'>
+        </div>
+      </form>
+    <form action = "/todos/<%=@id%>" method="POST" class="form">
+        <input type="hidden" name="_method" value="delete">
+        <div class="btn-container">
+          <input class='btn-submit' type='submit' value='Delete'>
+        </div>
+      </form>
+    
+  </div>
+</section>
